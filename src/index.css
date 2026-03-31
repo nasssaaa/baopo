@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #121212; /* 极致的深色模式，岩石灰背景 */
+  color: #ffffff; /* 工业科技感的白色文字 */
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* 取消浏览器默认的滚动条，使用全屏布局 */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
