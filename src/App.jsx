@@ -147,38 +147,28 @@ const AnalysisPanel = ({ topic, content, onClose }) => {
     ));
 
     try {
-      // 🚀 组装发送给大模型的数据
-      const payload = {
-        model: "ep-m-20260121184348-z2jb5", // 【注意】这里替换为你在火山引擎申请的 接入点 ID (Endpoint ID)
-        stream: true, // 开启真实流式输出
-        messages: [
-          {
-            role: 'system',
-            // 动态注入当前 Markdown 解析的内容作为背景知识
-            content: `>> SYSTEM OVERRIDE.\n你是一个硬核的爆破工程专家。已载入机密文档：\n${content}\n请严格基于上述资料回答用户问题。回答请保持极客、冷峻的工业风格。`
-          },
-          // 可以选择性地把之前的历史消息也发过去（视你的需求而定）
-          // ...messages, 
-          {
-            role: 'user',
-            content: userQ
-          }
-        ]
-      };
+      // 🚀 组装发送给后端服务器的数据
+      const messagesPayload = [
+        {
+          role: 'system',
+          // 动态注入当前 Markdown 解析的内容作为背景知识
+          content: `>> SYSTEM OVERRIDE.\n你是一个硬核的爆破工程专家。已载入机密文档：\n${content}\n请严格基于上述资料回答用户问题。回答请保持极客、冷峻的工业风格。`
+        },
+        // 可以选择性地把之前的历史消息也发过去（视你的需求而定）
+        // ...messages, 
+        {
+          role: 'user',
+          content: userQ
+        }
+      ];
 
-      // ❌ 以前的写法（会报 CORS 跨域错误）
-      // const response = await fetch('https://ark.cn-beijing.volces.com/api/v3/chat/completions', { ... })
-      // const apiKey = import.meta.env.VITE_DOUBAO_API_KEY;
-      const apiKey = "afe01879-d881-45f6-bbb4-fc8a34390aa5";
-      console.log(">> SYSTEM CHECK - 当前加载的 API Key 是:", apiKey);
-      // ✅ 现在的写法（通过 Vite 代理中转）
-      const response = await fetch('/api/doubao/api/v3/chat/completions', {
+      // ✅ 现在的写法（访问本地 Node.js 后端代理）
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_DOUBAO_API_KEY}`
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify({ messages: messagesPayload })
       });
 
       if (!response.ok) throw new Error('UPLINK FAILED: 网络通信异常');
