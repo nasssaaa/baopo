@@ -25,6 +25,20 @@ const blastTopics = [
     title: "殉爆",
     videoSrc: "/videos/catastrophic_explosion.mp4",
     slug: "catastrophic_explosion"
+  },
+  {
+    id: 4,
+    depth: "-700m",
+    title: "起爆方法",
+    videoSrc: "/videos/initiation.mp4",
+    slug: "initiation"
+  },
+  {
+    id: 5,
+    depth: "-800m",
+    title: "炸药类型",
+    videoSrc: "/videos/type.mp4",
+    slug: "type"
   }
 ];
 
