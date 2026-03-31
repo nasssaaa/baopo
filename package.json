@@ -1,32 +1,25 @@
 {
   "name": "baopo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
-    "server": "node server/server.js",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev:all": "concurrently \"npm run dev --prefix client\" \"npm run dev --prefix server\"",
+    "install:all": "npm install --prefix client && npm install --prefix server",
+    "build": "npm run build --prefix client"
   },
-  "dependencies": {
-    "framer-motion": "^12.38.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-markdown": "^10.1.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasssaaa/baopo.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nasssaaa/baopo/issues"
+  },
+  "homepage": "https://github.com/nasssaaa/baopo#readme",
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "concurrently": "^9.2.1",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.4.0",
-    "vite": "^8.0.1"
+    "concurrently": "^9.2.1"
   }
 }
