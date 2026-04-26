@@ -1,5 +1,6 @@
 // src/App.jsx
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import './App.css';
@@ -479,6 +480,14 @@ function App() {
           </div>
         </div>
         <div style={{ marginTop: 'auto', textAlign: 'center', color: '#555', fontSize: '0.8rem' }}>
+          <Link to="/learn" style={{
+            display: 'block', margin: '15px 0', padding: '10px 15px',
+            background: 'rgba(0,255,204,0.08)', border: '1px solid rgba(0,255,204,0.3)',
+            borderRadius: '4px', color: '#00ffcc', textDecoration: 'none',
+            fontFamily: "'Courier New', monospace", fontWeight: 'bold',
+            letterSpacing: '2px', fontSize: '0.85rem', transition: 'all 0.3s',
+            textAlign: 'center'
+          }}>[ 📖 在线学习 ]</Link>
           <p>SYSTEM INITIALIZED</p>
         </div>
       </aside>
