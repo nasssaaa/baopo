@@ -10,6 +10,7 @@ require('dotenv').config({ path: path.join(__dirname, '.env') });
 const app = express();
 const PORT = process.env.PORT || 3000;
 const USERS_FILE = path.join(__dirname, 'data', 'users.json');
+const HISTORY_DIR = path.join(__dirname, 'data', 'history');
 
 // 确保 data 目录存在
 if (!fs.existsSync(path.join(__dirname, 'data'))) {
@@ -18,6 +19,10 @@ if (!fs.existsSync(path.join(__dirname, 'data'))) {
 // 确保 users.json 存在
 if (!fs.existsSync(USERS_FILE)) {
   fs.writeFileSync(USERS_FILE, '{}', 'utf-8');
+}
+// 确保 history 目录存在
+if (!fs.existsSync(HISTORY_DIR)) {
+  fs.mkdirSync(HISTORY_DIR, { recursive: true });
 }
 
 // 读/写用户数据
@@ -31,6 +36,35 @@ function writeUsers(users) {
 
 // 简单 token → userId 映射（内存中，重启后用户需重新登录）
 const tokenStore = {};
+
+// ======== 认证中间件 ========
+function authMiddleware(req, res, next) {
+  const token = req.cookies?.auth_token;
+  if (!token || !tokenStore[token]) {
+    return res.status(401).json({ error: '未登录' });
+  }
+  req.username = tokenStore[token];
+  next();
+}
+
+// ======== 历史记录存储（按用户分文件） ========
+// 数据结构：{ examHistory: [], aiChatHistory: {} }
+function getHistoryFile(username) {
+  return path.join(HISTORY_DIR, `${username}.json`);
+}
+function readHistory(username) {
+  const file = getHistoryFile(username);
+  try {
+    if (fs.existsSync(file)) {
+      return JSON.parse(fs.readFileSync(file, 'utf-8'));
+    }
+  } catch {}
+  return { examHistory: [], aiChatHistory: {} };
+}
+function writeHistory(username, data) {
+  const file = getHistoryFile(username);
+  fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
+}
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
@@ -147,6 +181,110 @@ app.post('/api/chat', async (req, res) => {
       res.end();
     }
   }
+});
+
+// ======== 历史记录 API ========
+
+// 获取全部历史记录（考试 + AI对话）
+app.get('/api/history', authMiddleware, (req, res) => {
+  const data = readHistory(req.username);
+  res.json({ ok: true, data });
+});
+
+// 保存考试记录（追加）
+app.post('/api/history/exam', authMiddleware, (req, res) => {
+  const { record } = req.body;
+  if (!record || typeof record.id === 'undefined') {
+    return res.status(400).json({ error: '无效的考试记录' });
+  }
+  const history = readHistory(req.username);
+  // 避免重复追加（幂等：相同 id 只保留一个）
+  const existIdx = history.examHistory.findIndex(r => r.id === record.id);
+  if (existIdx >= 0) {
+    history.examHistory[existIdx] = record;
+  } else {
+    history.examHistory.unshift(record);
+    // 最多保留 50 条
+    if (history.examHistory.length > 50) {
+      history.examHistory = history.examHistory.slice(0, 50);
+    }
+  }
+  writeHistory(req.username, history);
+  res.json({ ok: true });
+});
+
+// 删除单条考试记录
+app.delete('/api/history/exam/:recordId', authMiddleware, (req, res) => {
+  const { recordId } = req.params;
+  const history = readHistory(req.username);
+  history.examHistory = history.examHistory.filter(r => r.id !== recordId);
+  writeHistory(req.username, history);
+  res.json({ ok: true });
+});
+
+// 清空考试记录
+app.delete('/api/history/exam', authMiddleware, (req, res) => {
+  const history = readHistory(req.username);
+  history.examHistory = [];
+  writeHistory(req.username, history);
+  res.json({ ok: true });
+});
+
+// 保存单条 AI 对话（按 questionKey 覆盖）
+app.post('/api/history/ai-chat', authMiddleware, (req, res) => {
+  const { questionKey, messages } = req.body;
+  if (!questionKey || !Array.isArray(messages)) {
+    return res.status(400).json({ error: '参数不完整' });
+  }
+  const history = readHistory(req.username);
+  history.aiChatHistory[questionKey] = {
+    questionKey,
+    messages,
+    updatedAt: Date.now(),
+  };
+  writeHistory(req.username, history);
+  res.json({ ok: true });
+});
+
+// 删除单条 AI 对话
+app.delete('/api/history/ai-chat/:questionKey', authMiddleware, (req, res) => {
+  const { questionKey } = req.params;
+  const history = readHistory(req.username);
+  if (history.aiChatHistory[questionKey]) {
+    delete history.aiChatHistory[questionKey];
+    writeHistory(req.username, history);
+  }
+  res.json({ ok: true });
+});
+
+// 清空 AI 对话历史
+app.delete('/api/history/ai-chat', authMiddleware, (req, res) => {
+  const history = readHistory(req.username);
+  history.aiChatHistory = {};
+  writeHistory(req.username, history);
+  res.json({ ok: true });
+});
+
+// ======== 全部学习数据同步 API ========
+
+// 获取全部学习数据
+app.get('/api/sync', authMiddleware, (req, res) => {
+  const history = readHistory(req.username);
+  // 其他学习数据仍由前端 localStorage 管理，这里只同步历史记录
+  res.json({ ok: true, data: history });
+});
+
+// 批量保存学习数据（completed / wrong / stats / practiceProgress / bookmarks）
+app.post('/api/sync/study', authMiddleware, (req, res) => {
+  const { completed, wrong, stats, practiceProgress, bookmarks } = req.body;
+  const history = readHistory(req.username);
+  if (completed !== undefined) history.completed = completed;
+  if (wrong !== undefined) history.wrong = wrong;
+  if (stats !== undefined) history.stats = stats;
+  if (practiceProgress !== undefined) history.practiceProgress = practiceProgress;
+  if (bookmarks !== undefined) history.bookmarks = bookmarks;
+  writeHistory(req.username, history);
+  res.json({ ok: true });
 });
 
 app.listen(PORT, () => {

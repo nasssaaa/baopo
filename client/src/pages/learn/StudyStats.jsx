@@ -73,11 +73,11 @@ function LineChart({ data, width = 500, height = 200 }) {
       ))}
 
       {/* 图例 */}
-      <g transform={`translate(${padding.left}, ${height - 5})`}>
-        <rect x="0" y="-8" width="12" height="3" fill="#00ffcc" />
-        <text x="16" y="-3" fill="#888" fontSize="10">答题数</text>
-        <rect x="70" y="-8" width="12" height="3" fill="#4ade80" />
-        <text x="86" y="-3" fill="#888" fontSize="10">正确数</text>
+      <g>
+        <rect x={width - padding.right - 100} y={padding.top - 12} width="12" height="3" fill="#00ffcc" rx="1" />
+        <text x={width - padding.right - 85} y={padding.top - 4} fill="#888" fontSize="10">答题数</text>
+        <rect x={width - padding.right - 50} y={padding.top - 12} width="12" height="3" fill="#4ade80" rx="1" />
+        <text x={width - padding.right - 35} y={padding.top - 4} fill="#888" fontSize="10">正确数</text>
       </g>
     </svg>
   );

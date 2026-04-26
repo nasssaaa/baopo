@@ -25,18 +25,36 @@ function getQuickQuestions(question, userAnswer, isCorrect) {
   return questions;
 }
 
-export default function QuestionAI({ question, userAnswer, isCorrect }) {
-  const [messages, setMessages] = useState([]);
+export default function QuestionAI({ question, userAnswer, isCorrect, store }) {
+  const questionKey = `${question.chapter}_${question.id}`;
+
+  // 尝试从 store 恢复历史对话；每次题目变化时重新加载
+  const [messages, setMessages] = useState(() => {
+    if (store && store.getAIChat) {
+      const saved = store.getAIChat(questionKey);
+      if (saved && saved.messages) return saved.messages;
+    }
+    return [];
+  });
   const [inputVal, setInputVal] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // 每次题目变化，清空对话
+  // 每次题目变化，加载新的对话（或空）
   useEffect(() => {
-    setMessages([]);
+    if (store && store.getAIChat) {
+      const saved = store.getAIChat(questionKey);
+      if (saved && saved.messages && saved.messages.length > 0) {
+        setMessages(saved.messages);
+      } else {
+        setMessages([]);
+      }
+    } else {
+      setMessages([]);
+    }
     setInputVal('');
     setIsTyping(false);
-  }, [question]);
+  }, [questionKey]);
 
   // 滚动到底部
   useEffect(() => {
@@ -70,8 +88,12 @@ ${isCorrect !== undefined ? `答题结果：${isCorrect ? '正确' : '错误'}` 
   const sendMessage = async (userMsg) => {
     if (!userMsg.trim() || isTyping) return;
 
+    const userMsgObj = { role: 'user', content: userMsg };
+    // 构建完整对话（包含旧消息 + 用户新消息）
+    const conversationHistory = [...messages, userMsgObj];
+
     // 用户消息上屏
-    setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
+    setMessages(conversationHistory);
     setInputVal('');
     setIsTyping(true);
 
@@ -81,8 +103,7 @@ ${isCorrect !== undefined ? `答题结果：${isCorrect ? '正确' : '错误'}` 
     try {
       const messagesPayload = [
         { role: 'system', content: buildSystemPrompt() },
-        ...messages.map(m => ({ role: m.role, content: m.content })),
-        { role: 'user', content: userMsg },
+        ...conversationHistory.map(m => ({ role: m.role, content: m.content })),
       ];
 
       const response = await fetch('/api/chat', {
@@ -96,6 +117,7 @@ ${isCorrect !== undefined ? `答题结果：${isCorrect ? '正确' : '错误'}` 
       const reader = response.body.getReader();
       const decoder = new TextDecoder('utf-8');
       let done = false;
+      let fullResponse = '';
 
       while (!done) {
         const { value, done: readerDone } = await reader.read();
@@ -112,11 +134,12 @@ ${isCorrect !== undefined ? `答题结果：${isCorrect ? '正确' : '错误'}` 
                 const data = JSON.parse(line.slice(6));
                 const textDelta = data.choices[0]?.delta?.content || '';
                 if (textDelta) {
+                  fullResponse += textDelta;
                   setMessages(prev => {
                     const copy = [...prev];
                     const last = copy.length - 1;
                     if (last >= 0) {
-                      copy[last] = { ...copy[last], content: copy[last].content + textDelta };
+                      copy[last] = { ...copy[last], content: fullResponse };
                     }
                     return copy;
                   });
@@ -128,6 +151,14 @@ ${isCorrect !== undefined ? `答题结果：${isCorrect ? '正确' : '错误'}` 
           }
         }
       }
+
+      // 对话结束后，将完整对话保存到 store
+      setMessages(prev => {
+        if (store && store.saveAIChat) {
+          store.saveAIChat(questionKey, prev);
+        }
+        return prev;
+      });
     } catch (error) {
       setMessages(prev => {
         const copy = [...prev];

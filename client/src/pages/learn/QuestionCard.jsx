@@ -3,6 +3,7 @@
 // 支持三种题型：单选、多选、判断
 // 练习模式：提交后显示正确/错误高亮 + AI 解析
 // 考试模式（examMode）：只选择不提交，不显示对错
+// 支持答题记录持久化（initialAnswer + onAnswerChange）
 
 import { useState, useEffect } from 'react';
 import QuestionAI from './QuestionAI';
@@ -10,7 +11,7 @@ import { getQuestionKey } from '../../hooks/useQuestions';
 
 export default function QuestionCard({
   question,
-  onAnswer,        // (questionKey, isCorrect, userAnswer) => void
+  onAnswer,
   onNext,
   onPrev,
   onBookmark,
@@ -19,21 +20,26 @@ export default function QuestionCard({
   currentIndex,
   totalCount,
   isCompleted,
-  examMode = false,         // 考试模式：只选择不提交
-  examAnswer = '',          // 考试模式：回显已选答案
-  onExamSelect,             // 考试模式：(questionKey, userAnswer) => void
+  examMode = false,
+  examAnswer = '',
+  onExamSelect,
+  store,
+  initialAnswer,   // 章节练习：从持久化记录恢复答案
+  onAnswerChange,  // 章节练习：选择变化时通知父组件保存
 }) {
   const [selected, setSelected] = useState('');
   const [multiSelected, setMultiSelected] = useState(new Set());
   const [submitted, setSubmitted] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null);
 
-  // 题目变化时重置状态（或恢复考试已选答案）
+  // 题目变化时重置状态，或恢复已有答题记录
   useEffect(() => {
-    setSubmitted(false);
-    setIsCorrect(null);
+    const key = getQuestionKey(question);
+
     if (examMode && examAnswer) {
-      // 恢复考试已选答案
+      // 考试模式：恢复已选答案
+      setSubmitted(false);
+      setIsCorrect(null);
       if (question.type === '多项选择题') {
         setMultiSelected(new Set(examAnswer.split('')));
         setSelected('');
@@ -41,11 +47,37 @@ export default function QuestionCard({
         setSelected(examAnswer);
         setMultiSelected(new Set());
       }
+    } else if (initialAnswer) {
+      // 练习模式：恢复已有答题记录
+      setSubmitted(!!initialAnswer.submitted);
+      setIsCorrect(initialAnswer.isCorrect ?? null);
+      if (initialAnswer.submitted) {
+        if (question.type === '多项选择题') {
+          setMultiSelected(new Set((initialAnswer.userAnswer || '').split('')));
+          setSelected('');
+        } else {
+          setSelected(initialAnswer.userAnswer || '');
+          setMultiSelected(new Set());
+        }
+      } else {
+        // 选了但没提交，恢复已选
+        if (question.type === '多项选择题') {
+          const s = initialAnswer.selectedMulti;
+          setMultiSelected(s ? new Set(s) : new Set());
+          setSelected('');
+        } else {
+          setSelected(initialAnswer.selectedSingle || '');
+          setMultiSelected(new Set());
+        }
+      }
     } else {
+      // 全新题目
+      setSubmitted(false);
+      setIsCorrect(null);
       setSelected('');
       setMultiSelected(new Set());
     }
-  }, [question, examMode, examAnswer]);
+  }, [question, examMode, examAnswer, initialAnswer]);
 
   const questionKey = getQuestionKey(question);
   const type = question.type;
@@ -53,7 +85,21 @@ export default function QuestionCard({
   const optionKeys = Object.keys(options);
   const correctAnswer = question.answer;
 
-  // 考试模式下选中选项时通知父组件
+  // 通知父组件保存答题状态
+  const notifyAnswerChange = (newSelected, newMulti) => {
+    if (!onAnswerChange) return;
+    const userAnswer = type === '多项选择题'
+      ? Array.from(newMulti).sort().join('')
+      : newSelected;
+    onAnswerChange({
+      selectedSingle: type !== '多项选择题' ? newSelected : undefined,
+      selectedMulti: type === '多项选择题' ? Array.from(newMulti) : undefined,
+      userAnswer,
+      submitted: false,
+      isCorrect: undefined,
+    });
+  };
+
   const handleExamSelect = (answer) => {
     if (onExamSelect) onExamSelect(questionKey, answer);
   };
@@ -61,12 +107,14 @@ export default function QuestionCard({
   const handleSingleSelect = (key) => {
     if (submitted) return;
     setSelected(key);
+    notifyAnswerChange(key, new Set());
     if (examMode) handleExamSelect(key);
   };
 
   const handleJudgeSelect = (val) => {
     if (submitted) return;
     setSelected(val);
+    notifyAnswerChange(val, new Set());
     if (examMode) handleExamSelect(val);
   };
 
@@ -76,6 +124,7 @@ export default function QuestionCard({
       const next = new Set(prev);
       if (next.has(key)) next.delete(key);
       else next.add(key);
+      notifyAnswerChange('', next);
       if (examMode) handleExamSelect(Array.from(next).sort().join(''));
       return next;
     });
@@ -96,6 +145,10 @@ export default function QuestionCard({
     setSubmitted(true);
     setIsCorrect(correct);
     if (onAnswer) onAnswer(questionKey, correct, userAnswer);
+    // 保存提交结果
+    if (onAnswerChange) {
+      onAnswerChange({ userAnswer, submitted: true, isCorrect: correct });
+    }
   };
 
   const getOptionClass = (key) => {
@@ -137,6 +190,11 @@ export default function QuestionCard({
           <span className="question-chapter">{question.chapter}</span>
           {showNavigation && totalCount && (
             <span className="question-progress">{currentIndex + 1} / {totalCount}</span>
+          )}
+          {initialAnswer?.submitted && (
+            <span className={`submitted-indicator ${initialAnswer.isCorrect ? 'correct' : 'wrong'}`}>
+              {initialAnswer.isCorrect ? '✓ 已答对' : '✗ 已答错'}
+            </span>
           )}
         </div>
         {onBookmark && (
@@ -223,7 +281,7 @@ export default function QuestionCard({
 
       {/* AI 解析区 - 仅练习模式提交后显示 */}
       {!examMode && submitted && (
-        <QuestionAI question={question} userAnswer={userAnswerText} isCorrect={isCorrect} />
+        <QuestionAI question={question} userAnswer={userAnswerText} isCorrect={isCorrect} store={store} />
       )}
 
       {showNavigation && (

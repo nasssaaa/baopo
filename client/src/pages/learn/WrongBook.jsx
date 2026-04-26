@@ -72,6 +72,7 @@ export default function WrongBook({ questions, store, chapters }) {
           onPrev={() => setPracticeIndex(Math.max(practiceIndex - 1, 0))}
           currentIndex={practiceIndex}
           totalCount={wrongQuestions.length}
+          store={store}
         />
       </div>
     );

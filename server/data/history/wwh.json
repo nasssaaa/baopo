@@ -1,0 +1,2515 @@
+{
+  "examHistory": [
+    {
+      "id": "1777193487114",
+      "timestamp": 1777193487114,
+      "total": 50,
+      "correct": 1,
+      "wrong": 0,
+      "unanswered": 49,
+      "score": 2,
+      "chapterStats": {
+        "第六章": {
+          "total": 24,
+          "correct": 1,
+          "wrong": 0
+        },
+        "第四章": {
+          "total": 4,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第二章": {
+          "total": 8,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 3,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第七章": {
+          "total": 6,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 3,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 1
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第六章单项选择题_42",
+          "userAnswer": "a",
+          "isCorrect": true,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_77",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_46",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_47",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_82",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_62",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_59",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_44",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_35",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章单项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_39",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_58",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_88",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_13",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_22",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_12",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_29",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_24",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_36",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_49",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_21",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_54",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_28",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_44",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_43",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_67",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_23",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第六章单项选择题_42",
+        "第六章单项选择题_77",
+        "第六章单项选择题_46",
+        "第四章单项选择题_47",
+        "第六章单项选择题_10",
+        "第六章单项选择题_82",
+        "第四章单项选择题_62",
+        "第六章单项选择题_59",
+        "第四章单项选择题_44",
+        "第二章单项选择题_35",
+        "第五章单项选择题_9",
+        "第六章单项选择题_9",
+        "第六章单项选择题_16",
+        "第三章单项选择题_5",
+        "第二章单项选择题_39",
+        "第六章单项选择题_1",
+        "第二章单项选择题_58",
+        "第六章单项选择题_88",
+        "第五章单项选择题_3",
+        "第七章单项选择题_4",
+        "第三章多项选择题_13",
+        "第六章多项选择题_9",
+        "第七章多项选择题_4",
+        "第一章多项选择题_2",
+        "第七章多项选择题_22",
+        "第七章多项选择题_14",
+        "第一章多项选择题_1",
+        "第六章多项选择题_12",
+        "第二章多项选择题_7",
+        "第六章多项选择题_4",
+        "第一章多项选择题_6",
+        "第二章多项选择题_14",
+        "第六章多项选择题_29",
+        "第四章多项选择题_2",
+        "第七章多项选择题_24",
+        "第二章判断对错题_20",
+        "第六章判断对错题_36",
+        "第六章判断对错题_49",
+        "第六章判断对错题_21",
+        "第六章判断对错题_54",
+        "第五章判断对错题_10",
+        "第六章判断对错题_28",
+        "第二章判断对错题_16",
+        "第六章判断对错题_44",
+        "第六章判断对错题_4",
+        "第六章判断对错题_43",
+        "第六章判断对错题_67",
+        "第六章判断对错题_23",
+        "第二章判断对错题_10",
+        "第七章判断对错题_4"
+      ]
+    },
+    {
+      "id": "1777193182775",
+      "timestamp": 1777193182775,
+      "total": 50,
+      "correct": 1,
+      "wrong": 0,
+      "unanswered": 49,
+      "score": 2,
+      "chapterStats": {
+        "第七章": {
+          "total": 3,
+          "correct": 1,
+          "wrong": 0
+        },
+        "第六章": {
+          "total": 10,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 10,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第二章": {
+          "total": 11,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第四章": {
+          "total": 11,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 3,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 1
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第七章单项选择题_7",
+          "userAnswer": "a",
+          "isCorrect": true,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_53",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_54",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_23",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_57",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_61",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_60",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_17",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_11",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_18",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_18",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_28",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_32",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_13",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_13",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_25",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_37",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_35",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第七章单项选择题_7",
+        "第六章单项选择题_3",
+        "第一章单项选择题_4",
+        "第二章单项选择题_53",
+        "第四章单项选择题_54",
+        "第五章单项选择题_2",
+        "第六章单项选择题_20",
+        "第六章单项选择题_4",
+        "第二章单项选择题_23",
+        "第一章单项选择题_19",
+        "第四章单项选择题_57",
+        "第六章单项选择题_27",
+        "第六章单项选择题_10",
+        "第五章单项选择题_8",
+        "第四章单项选择题_61",
+        "第二章单项选择题_8",
+        "第四章单项选择题_60",
+        "第二章单项选择题_26",
+        "第一章单项选择题_17",
+        "第一章单项选择题_11",
+        "第四章多项选择题_18",
+        "第一章多项选择题_1",
+        "第一章多项选择题_5",
+        "第六章多项选择题_15",
+        "第六章多项选择题_27",
+        "第七章多项选择题_18",
+        "第六章多项选择题_28",
+        "第六章多项选择题_32",
+        "第二章多项选择题_13",
+        "第六章多项选择题_26",
+        "第二章多项选择题_5",
+        "第二章多项选择题_14",
+        "第二章多项选择题_8",
+        "第七章多项选择题_6",
+        "第三章多项选择题_7",
+        "第三章判断对错题_13",
+        "第一章判断对错题_4",
+        "第二章判断对错题_26",
+        "第二章判断对错题_4",
+        "第一章判断对错题_10",
+        "第二章判断对错题_6",
+        "第一章判断对错题_6",
+        "第四章判断对错题_6",
+        "第四章判断对错题_25",
+        "第四章判断对错题_37",
+        "第四章判断对错题_20",
+        "第三章判断对错题_20",
+        "第一章判断对错题_3",
+        "第四章判断对错题_35",
+        "第四章判断对错题_26"
+      ]
+    },
+    {
+      "id": "1777192881542",
+      "timestamp": 1777192881542,
+      "total": 50,
+      "correct": 1,
+      "wrong": 3,
+      "unanswered": 46,
+      "score": 2,
+      "chapterStats": {
+        "第六章": {
+          "total": 12,
+          "correct": 1,
+          "wrong": 2
+        },
+        "第二章": {
+          "total": 12,
+          "correct": 0,
+          "wrong": 1
+        },
+        "第四章": {
+          "total": 13,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 7,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 4,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 1
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第六章单项选择题_86",
+          "userAnswer": "b",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_34",
+          "userAnswer": "c",
+          "isCorrect": true,
+          "answered": true
+        },
+        {
+          "questionKey": "第二章单项选择题_43",
+          "userAnswer": "b",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_36",
+          "userAnswer": "a",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第四章单项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_39",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_56",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_42",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章单项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_52",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_87",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_41",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_50",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_51",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_17",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_41",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_44",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_72",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_69",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_11",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_21",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_11",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_24",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_21",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章判断对错题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第六章单项选择题_86",
+        "第六章单项选择题_34",
+        "第二章单项选择题_43",
+        "第六章单项选择题_36",
+        "第四章单项选择题_6",
+        "第二章单项选择题_39",
+        "第四章单项选择题_56",
+        "第二章单项选择题_42",
+        "第三章单项选择题_6",
+        "第二章单项选择题_52",
+        "第六章单项选择题_87",
+        "第六章单项选择题_41",
+        "第三章单项选择题_4",
+        "第六章单项选择题_50",
+        "第六章单项选择题_51",
+        "第二章单项选择题_17",
+        "第四章单项选择题_41",
+        "第二章单项选择题_44",
+        "第六章单项选择题_72",
+        "第四章单项选择题_69",
+        "第四章多项选择题_3",
+        "第六章多项选择题_14",
+        "第三章多项选择题_11",
+        "第四章多项选择题_4",
+        "第四章多项选择题_21",
+        "第四章多项选择题_20",
+        "第四章多项选择题_26",
+        "第一章多项选择题_5",
+        "第四章多项选择题_11",
+        "第四章多项选择题_24",
+        "第四章多项选择题_19",
+        "第二章多项选择题_16",
+        "第一章多项选择题_8",
+        "第二章多项选择题_5",
+        "第二章多项选择题_7",
+        "第二章判断对错题_20",
+        "第六章判断对错题_21",
+        "第二章判断对错题_14",
+        "第一章判断对错题_5",
+        "第一章判断对错题_4",
+        "第三章判断对错题_9",
+        "第二章判断对错题_1",
+        "第三章判断对错题_10",
+        "第四章判断对错题_4",
+        "第三章判断对错题_3",
+        "第三章判断对错题_14",
+        "第五章判断对错题_4",
+        "第六章判断对错题_10",
+        "第六章判断对错题_19",
+        "第五章判断对错题_9"
+      ]
+    },
+    {
+      "id": "1777192617853",
+      "timestamp": 1777192617853,
+      "total": 50,
+      "correct": 0,
+      "wrong": 0,
+      "unanswered": 50,
+      "score": 0,
+      "chapterStats": {
+        "第六章": {
+          "total": 5,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第四章": {
+          "total": 21,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第七章": {
+          "total": 1,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 10,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第二章": {
+          "total": 7,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 4,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 0
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第六章单项选择题_78",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_56",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_48",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_29",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_60",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_36",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_69",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_55",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_53",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_25",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_37",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_13",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_24",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_69",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_20",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_11",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_28",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章判断对错题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_23",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第六章单项选择题_78",
+        "第五章单项选择题_10",
+        "第四章单项选择题_10",
+        "第四章单项选择题_56",
+        "第四章单项选择题_48",
+        "第四章单项选择题_29",
+        "第六章单项选择题_8",
+        "第四章单项选择题_60",
+        "第四章单项选择题_36",
+        "第四章单项选择题_69",
+        "第五章单项选择题_9",
+        "第四章单项选择题_55",
+        "第六章单项选择题_14",
+        "第四章单项选择题_6",
+        "第四章单项选择题_53",
+        "第四章单项选择题_14",
+        "第四章单项选择题_16",
+        "第六章单项选择题_26",
+        "第四章单项选择题_25",
+        "第四章单项选择题_37",
+        "第七章多项选择题_6",
+        "第三章多项选择题_16",
+        "第四章多项选择题_8",
+        "第四章多项选择题_2",
+        "第四章多项选择题_9",
+        "第三章多项选择题_15",
+        "第二章多项选择题_9",
+        "第三章多项选择题_14",
+        "第三章多项选择题_13",
+        "第四章多项选择题_24",
+        "第四章多项选择题_10",
+        "第二章多项选择题_7",
+        "第一章多项选择题_8",
+        "第三章多项选择题_2",
+        "第二章多项选择题_8",
+        "第二章判断对错题_5",
+        "第六章判断对错题_69",
+        "第二章判断对错题_27",
+        "第三章判断对错题_20",
+        "第一章判断对错题_3",
+        "第三章判断对错题_6",
+        "第三章判断对错题_5",
+        "第二章判断对错题_15",
+        "第三章判断对错题_11",
+        "第三章判断对错题_19",
+        "第四章判断对错题_26",
+        "第一章判断对错题_1",
+        "第四章判断对错题_28",
+        "第一章判断对错题_8",
+        "第二章判断对错题_23"
+      ]
+    },
+    {
+      "id": "1777192421816",
+      "timestamp": 1777192421816,
+      "total": 50,
+      "correct": 0,
+      "wrong": 1,
+      "unanswered": 49,
+      "score": 0,
+      "chapterStats": {
+        "第六章": {
+          "total": 14,
+          "correct": 0,
+          "wrong": 1
+        },
+        "第四章": {
+          "total": 16,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 6,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 5,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第七章": {
+          "total": 3,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第二章": {
+          "total": 4,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 0
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第六章单项选择题_2",
+          "userAnswer": "a",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_63",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_43",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_36",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_48",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_46",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章单项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_49",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_62",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_69",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_41",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_28",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_63",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_22",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_29",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章多项选择题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_18",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_13",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_16",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_8",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_25",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_14",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_21",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_26",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_18",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章判断对错题_24",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第六章单项选择题_2",
+        "第六章单项选择题_27",
+        "第四章单项选择题_63",
+        "第五章单项选择题_2",
+        "第五章单项选择题_6",
+        "第四章单项选择题_43",
+        "第六章单项选择题_36",
+        "第六章单项选择题_8",
+        "第四章单项选择题_48",
+        "第四章单项选择题_46",
+        "第五章单项选择题_7",
+        "第四章单项选择题_49",
+        "第六章单项选择题_62",
+        "第四章单项选择题_69",
+        "第六章单项选择题_41",
+        "第六章单项选择题_4",
+        "第六章单项选择题_28",
+        "第六章单项选择题_26",
+        "第六章单项选择题_19",
+        "第六章单项选择题_63",
+        "第五章多项选择题_4",
+        "第三章多项选择题_2",
+        "第六章多项选择题_22",
+        "第四章多项选择题_29",
+        "第五章多项选择题_7",
+        "第六章多项选择题_8",
+        "第一章多项选择题_1",
+        "第五章多项选择题_2",
+        "第七章多项选择题_7",
+        "第一章多项选择题_8",
+        "第四章多项选择题_27",
+        "第七章多项选择题_15",
+        "第七章多项选择题_2",
+        "第六章多项选择题_18",
+        "第二章多项选择题_13",
+        "第三章判断对错题_16",
+        "第四章判断对错题_1",
+        "第四章判断对错题_27",
+        "第二章判断对错题_15",
+        "第三章判断对错题_8",
+        "第二章判断对错题_25",
+        "第二章判断对错题_14",
+        "第四章判断对错题_19",
+        "第四章判断对错题_14",
+        "第四章判断对错题_21",
+        "第四章判断对错题_3",
+        "第三章判断对错题_4",
+        "第四章判断对错题_26",
+        "第三章判断对错题_18",
+        "第四章判断对错题_24"
+      ]
+    },
+    {
+      "id": "1777190802505",
+      "timestamp": 1777190802505,
+      "total": 50,
+      "correct": 0,
+      "wrong": 3,
+      "unanswered": 47,
+      "score": 0,
+      "chapterStats": {
+        "第六章": {
+          "total": 23,
+          "correct": 0,
+          "wrong": 2
+        },
+        "第二章": {
+          "total": 8,
+          "correct": 0,
+          "wrong": 1
+        },
+        "第四章": {
+          "total": 7,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第一章": {
+          "total": 5,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第七章": {
+          "total": 2,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第五章": {
+          "total": 4,
+          "correct": 0,
+          "wrong": 0
+        },
+        "第三章": {
+          "total": 1,
+          "correct": 0,
+          "wrong": 0
+        }
+      },
+      "typeStats": {
+        "single": {
+          "total": 20,
+          "correct": 0
+        },
+        "multi": {
+          "total": 15,
+          "correct": 0
+        },
+        "judge": {
+          "total": 15,
+          "correct": 0
+        }
+      },
+      "details": [
+        {
+          "questionKey": "第六章单项选择题_37",
+          "userAnswer": "a",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第六章单项选择题_7",
+          "userAnswer": "b",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第二章单项选择题_53",
+          "userAnswer": "a",
+          "isCorrect": false,
+          "answered": true
+        },
+        {
+          "questionKey": "第二章单项选择题_24",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_25",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_63",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_30",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_19",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_43",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_50",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_52",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章单项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_4",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章单项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第一章单项选择题_1",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章单项选择题_66",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_17",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_25",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_12",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_5",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章多项选择题_15",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_17",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_2",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_18",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章多项选择题_22",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章多项选择题_3",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第七章多项选择题_12",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第四章多项选择题_9",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_27",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_64",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_72",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_90",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_63",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_83",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_55",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_10",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_11",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_45",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第六章判断对错题_12",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第五章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_6",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第三章判断对错题_7",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        },
+        {
+          "questionKey": "第二章判断对错题_12",
+          "userAnswer": null,
+          "isCorrect": false,
+          "answered": false
+        }
+      ],
+      "questionKeys": [
+        "第六章单项选择题_37",
+        "第六章单项选择题_7",
+        "第二章单项选择题_53",
+        "第二章单项选择题_24",
+        "第六章单项选择题_25",
+        "第二章单项选择题_4",
+        "第四章单项选择题_63",
+        "第六章单项选择题_30",
+        "第六章单项选择题_19",
+        "第四章单项选择题_43",
+        "第一章单项选择题_5",
+        "第六章单项选择题_50",
+        "第一章单项选择题_10",
+        "第一章单项选择题_7",
+        "第六章单项选择题_52",
+        "第七章单项选择题_2",
+        "第一章单项选择题_4",
+        "第六章单项选择题_5",
+        "第一章单项选择题_1",
+        "第四章单项选择题_66",
+        "第六章多项选择题_17",
+        "第六章多项选择题_25",
+        "第五章多项选择题_5",
+        "第六章多项选择题_12",
+        "第二章多项选择题_5",
+        "第二章多项选择题_6",
+        "第二章多项选择题_15",
+        "第四章多项选择题_2",
+        "第四章多项选择题_17",
+        "第五章多项选择题_2",
+        "第四章多项选择题_18",
+        "第六章多项选择题_22",
+        "第五章多项选择题_3",
+        "第七章多项选择题_12",
+        "第四章多项选择题_9",
+        "第六章判断对错题_27",
+        "第六章判断对错题_64",
+        "第六章判断对错题_72",
+        "第六章判断对错题_90",
+        "第六章判断对错题_63",
+        "第六章判断对错题_83",
+        "第六章判断对错题_55",
+        "第六章判断对错题_10",
+        "第六章判断对错题_11",
+        "第六章判断对错题_45",
+        "第六章判断对错题_12",
+        "第五章判断对错题_6",
+        "第二章判断对错题_6",
+        "第三章判断对错题_7",
+        "第二章判断对错题_12"
+      ]
+    }
+  ],
+  "aiChatHistory": {
+    "第六章单项选择题_10": {
+      "questionKey": "第六章单项选择题_10",
+      "messages": [
+        {
+          "role": "user",
+          "content": "请详细解析这道题的答案，说明为什么正确答案是这个。"
+        },
+        {
+          "role": "assistant",
+          "content": "这道题的正确答案是D选项“起爆药包”，详细解析如下：\n1. 核心原因：起爆药包内装有雷管，雷管是敏感度极高的起爆器材。当孔内装入起爆药包后，若用力捣压它，一方面极易触发雷管引发早爆，造成严重的安全事故；另一方面可能会拉断雷管脚线，导致后续无法引爆，形成拒爆隐患，因此严禁捣压起爆药包。\n2. 其他选项分析：\n   - A选项“炸药”：在装入起爆药包之前的装药环节，对炸药进行适当捣实是合规操作，并非严禁行为。\n   - B选项“装药”：这个概念范围过于宽泛，题目明确特指装入起爆药包后的操作，不符合题意。\n   - C选项“炮泥”：炮泥是用于填塞炮孔的材料，捣压炮泥是炮孔填塞的必要步骤，不存在严禁的要求。"
+        }
+      ],
+      "updatedAt": 1777193865922
+    }
+  },
+  "completed": {
+    "第一章单项选择题_1": true,
+    "第四章单项选择题_35": true,
+    "第六章单项选择题_37": true,
+    "第六章单项选择题_7": true,
+    "第二章单项选择题_53": true,
+    "第一章单项选择题_3": true,
+    "第一章单项选择题_2": true,
+    "第六章单项选择题_2": true,
+    "第六章单项选择题_86": true,
+    "第六章单项选择题_34": true,
+    "第二章单项选择题_43": true,
+    "第六章单项选择题_36": true,
+    "第七章单项选择题_7": true,
+    "第六章单项选择题_42": true
+  }
+}

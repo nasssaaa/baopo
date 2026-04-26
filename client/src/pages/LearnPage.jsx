@@ -15,11 +15,13 @@ import './LearnPage.css';
 // 懒加载重量级模块，避免首屏加载时执行大量计算
 const MockExam = lazy(() => import('./learn/MockExam'));
 const WrongBook = lazy(() => import('./learn/WrongBook'));
+const AIChatHistory = lazy(() => import('./learn/AIChatHistory'));
 
 const TABS = [
   { key: 'practice', label: '📖 章节练习', icon: '📖' },
   { key: 'exam', label: '📝 模拟考试', icon: '📝' },
   { key: 'wrong', label: '📕 错题本', icon: '📕' },
+  { key: 'aiHistory', label: '🤖 AI解析历史', icon: '🤖' },
   { key: 'stats', label: '📊 学习统计', icon: '📊' },
 ];
 
@@ -222,6 +224,11 @@ export default function LearnPage() {
             {activeTab === 'wrong' && (
               <Suspense fallback={<div className="learn-loading"><div className="loading-spinner"></div><p className="loading-text">正在加载错题本...</p></div>}>
                 <WrongBook questions={questions} store={store} chapters={chapters} />
+              </Suspense>
+            )}
+            {activeTab === 'aiHistory' && (
+              <Suspense fallback={<div className="learn-loading"><div className="loading-spinner"></div><p className="loading-text">正在加载 AI 解析历史...</p></div>}>
+                <AIChatHistory store={store} questions={questions} />
               </Suspense>
             )}
             {activeTab === 'stats' && (
