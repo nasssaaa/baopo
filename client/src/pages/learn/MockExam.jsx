@@ -2,7 +2,7 @@
 // 模拟考试模块 - 可配置试卷结构 + 统一交卷 + 中途退出可恢复
 // 题目按题型分组排列：单选 → 多选 → 判断
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import QuestionCard from './QuestionCard';
 import { getQuestionKey } from '../../hooks/useQuestions';
 
@@ -27,10 +27,10 @@ export default function MockExam({ questions, store }) {
   const [savedSession, setSavedSession] = useState(() => loadSession());
   const [confirmInfo, setConfirmInfo] = useState(null); // 交卷确认信息
 
-  // 试卷结构
-  const singlePool = questions.filter(q => q.type === '单项选择题');
-  const multiPool = questions.filter(q => q.type === '多项选择题');
-  const judgePool = questions.filter(q => q.type === '判断对错题');
+  // 试卷结构 —— 使用 useMemo 避免每次渲染都遍历全部题目
+  const singlePool = useMemo(() => questions.filter(q => q.type === '单项选择题'), [questions]);
+  const multiPool = useMemo(() => questions.filter(q => q.type === '多项选择题'), [questions]);
+  const judgePool = useMemo(() => questions.filter(q => q.type === '判断对错题'), [questions]);
   const [singleCount, setSingleCount] = useState(20);
   const [multiCount, setMultiCount] = useState(15);
   const [judgeCount, setJudgeCount] = useState(15);

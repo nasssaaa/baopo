@@ -2,17 +2,19 @@
 // 爆破作业员考试在线学习页面 - 主容器
 // 整合章节练习、模拟考试、错题本、学习统计四大模块
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuestions } from '../hooks/useQuestions';
 import { useStudyStore } from '../hooks/useStudyStore';
 import { useAuth } from '../hooks/useAuth';
 import ChapterPractice from './learn/ChapterPractice';
-import MockExam from './learn/MockExam';
-import WrongBook from './learn/WrongBook';
 import StudyStats from './learn/StudyStats';
 import LoginPage from './LoginPage';
 import './LearnPage.css';
+
+// 懒加载重量级模块，避免首屏加载时执行大量计算
+const MockExam = lazy(() => import('./learn/MockExam'));
+const WrongBook = lazy(() => import('./learn/WrongBook'));
 
 const TABS = [
   { key: 'practice', label: '📖 章节练习', icon: '📖' },
@@ -213,10 +215,14 @@ export default function LearnPage() {
               <ChapterPractice chapters={chapters} store={store} />
             )}
             {activeTab === 'exam' && (
-              <MockExam questions={questions} store={store} chapters={chapters} />
+              <Suspense fallback={<div className="learn-loading"><div className="loading-spinner"></div><p className="loading-text">正在加载模拟考试...</p></div>}>
+                <MockExam questions={questions} store={store} chapters={chapters} />
+              </Suspense>
             )}
             {activeTab === 'wrong' && (
-              <WrongBook questions={questions} store={store} chapters={chapters} />
+              <Suspense fallback={<div className="learn-loading"><div className="loading-spinner"></div><p className="loading-text">正在加载错题本...</p></div>}>
+                <WrongBook questions={questions} store={store} chapters={chapters} />
+              </Suspense>
             )}
             {activeTab === 'stats' && (
               <StudyStats store={store} chapters={chapters} totalQuestions={total} />

@@ -61,12 +61,34 @@ export function useStudyStore(username) {
   const timerRef = useRef(null);
   const startTimeRef = useRef(null);
 
-  // 持久化到 localStorage
-  useEffect(() => { saveToStorage(STORAGE_KEYS.COMPLETED, completed); }, [completed]);
-  useEffect(() => { saveToStorage(STORAGE_KEYS.WRONG, wrong); }, [wrong]);
-  useEffect(() => { saveToStorage(STORAGE_KEYS.STATS, stats); }, [stats]);
-  useEffect(() => { saveToStorage(STORAGE_KEYS.PRACTICE_PROGRESS, practiceProgress); }, [practiceProgress]);
-  useEffect(() => { saveToStorage(STORAGE_KEYS.BOOKMARKS, bookmarks); }, [bookmarks]);
+  // 批量合并 localStorage 写入 —— 所有状态共享一个 debounced save，避免每次 state 变化都触发一次 write
+  const saveTimerRef = useRef(null);
+  const saveAll = useCallback(() => {
+    if (saveTimerRef.current) return;
+    saveTimerRef.current = setTimeout(() => {
+      saveToStorage(STORAGE_KEYS.COMPLETED, completed);
+      saveToStorage(STORAGE_KEYS.WRONG, wrong);
+      saveToStorage(STORAGE_KEYS.STATS, stats);
+      saveToStorage(STORAGE_KEYS.PRACTICE_PROGRESS, practiceProgress);
+      saveToStorage(STORAGE_KEYS.BOOKMARKS, bookmarks);
+      saveTimerRef.current = null;
+    }, 100);
+  }, [completed, wrong, stats, practiceProgress, bookmarks, STORAGE_KEYS]);
+
+  // 监听所有状态变化，统一在下一帧批量写入
+  useEffect(() => { saveAll(); }, [saveAll]);
+
+  // 组件卸载时同步写一次
+  useEffect(() => {
+    return () => {
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+      saveToStorage(STORAGE_KEYS.COMPLETED, completed);
+      saveToStorage(STORAGE_KEYS.WRONG, wrong);
+      saveToStorage(STORAGE_KEYS.STATS, stats);
+      saveToStorage(STORAGE_KEYS.PRACTICE_PROGRESS, practiceProgress);
+      saveToStorage(STORAGE_KEYS.BOOKMARKS, bookmarks);
+    };
+  }, [completed, wrong, stats, practiceProgress, bookmarks, STORAGE_KEYS]);
 
   /**
    * 开始计时（页面进入时调用）
