@@ -43,7 +43,9 @@ const DEFAULT_STATS = { totalAnswered: 0, totalCorrect: 0, studyTime: 0, dailySt
 
 async function fetchStudyDataFromServer() {
   try {
-    const res = await fetch('/api/sync/study', { credentials: 'include' });
+    // 添加时间戳，强制每次获取最新数据
+    const timestamp = Date.now();
+    const res = await fetch(`/api/sync/study?t=${timestamp}`, { credentials: 'include' });
     if (!res.ok) return null;
     const json = await res.json();
     return json.data || null;
@@ -68,7 +70,9 @@ async function syncStudyDataToServer(data) {
 // 服务端历史数据拉取
 async function fetchHistoryFromServer() {
   try {
-    const res = await fetch('/api/history', { credentials: 'include' });
+    // 添加时间戳，强制每次获取最新数据
+    const timestamp = Date.now();
+    const res = await fetch(`/api/history?t=${timestamp}`, { credentials: 'include' });
     if (!res.ok) return null;
     const json = await res.json();
     return json.data;

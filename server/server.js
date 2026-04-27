@@ -267,11 +267,25 @@ app.delete('/api/history/ai-chat', authMiddleware, (req, res) => {
 
 // ======== 全部学习数据同步 API ========
 
-// 获取全部学习数据
+// 获取全部学习数据（包含历史记录）
 app.get('/api/sync', authMiddleware, (req, res) => {
   const history = readHistory(req.username);
-  // 其他学习数据仍由前端 localStorage 管理，这里只同步历史记录
   res.json({ ok: true, data: history });
+});
+
+// 获取学习数据（completed / wrong / stats / practiceProgress / bookmarks）
+app.get('/api/sync/study', authMiddleware, (req, res) => {
+  const history = readHistory(req.username);
+  res.json({
+    ok: true,
+    data: {
+      completed: history.completed || {},
+      wrong: history.wrong || {},
+      stats: history.stats || {},
+      practiceProgress: history.practiceProgress || {},
+      bookmarks: history.bookmarks || {},
+    }
+  });
 });
 
 // 批量保存学习数据（completed / wrong / stats / practiceProgress / bookmarks）

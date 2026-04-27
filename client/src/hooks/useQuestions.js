@@ -8,6 +8,10 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 let cachedQuestions = null;
 let fetchPromise = null;
 
+// 存储文件修改时间，用于条件请求
+let lastModified = null;
+let questionsEtag = null;
+
 // 全局缓存章节分组结果
 let cachedChapters = null;
 
@@ -39,20 +43,41 @@ export function useQuestions() {
     }
 
     if (!fetchPromise) {
-      fetchPromise = fetch('/questions_clean_v2.json')
+      // 使用 HTTP 条件请求，只在文件变化时下载完整内容
+      const headers = new Headers();
+      if (lastModified) {
+        headers.append('If-Modified-Since', lastModified);
+      }
+      if (questionsEtag) {
+        headers.append('If-None-Match', questionsEtag);
+      }
+
+      fetchPromise = fetch('/questions_clean_v2.json', { headers })
         .then(res => {
+          // 304 Not Modified 表示文件没变化，使用缓存
+          if (res.status === 304) {
+            return null;
+          }
           if (!res.ok) throw new Error('加载题库失败');
+
+          // 记录文件的修改时间/etag，用于下次条件请求
+          lastModified = res.headers.get('Last-Modified');
+          questionsEtag = res.headers.get('ETag');
+
           return res.json();
         })
         .then(data => {
-          cachedQuestions = data;
+          if (data) {
+            cachedQuestions = data;
+          }
           return data;
         });
     }
 
     fetchPromise
       .then(data => {
-        setQuestions(data);
+        // data 为 null 表示 304，文件没变化，使用已有缓存
+        setQuestions(cachedQuestions || []);
         setLoading(false);
       })
       .catch(err => {
