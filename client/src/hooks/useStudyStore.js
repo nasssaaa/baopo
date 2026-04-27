@@ -201,7 +201,8 @@ export function useStudyStore(username) {
 
         const mergedCompleted = mergeServerData(localCompleted, serverStudy.completed);
         const mergedWrong = mergeServerData(localWrong, serverStudy.wrong);
-        const mergedStats = serverStudy.stats || localStats;
+        const mergedStats = { ...DEFAULT_STATS, ...(serverStudy.stats || {}), ...localStats };
+        mergedStats.dailyStats = { ...DEFAULT_STATS.dailyStats, ...(serverStudy.stats?.dailyStats || {}), ...(localStats.dailyStats || {}) };
         const mergedProgress = mergeServerData(localProgress, serverStudy.practiceProgress);
         const mergedBookmarks = mergeServerData(localBookmarks, serverStudy.bookmarks);
 
@@ -403,8 +404,20 @@ export function useStudyStore(username) {
     });
   }, [scheduleSync]);
 
+  const setPracticeType = useCallback((chapterName, type) => {
+    setPracticeProgress(prev => {
+      const next = { ...prev, [`${chapterName}_type`]: type };
+      scheduleSync({ practiceProgress: next });
+      return next;
+    });
+  }, [scheduleSync]);
+
   const getPracticeIndex = useCallback((chapterName) => {
     return practiceProgress[chapterName] || 0;
+  }, [practiceProgress]);
+
+  const getPracticeType = useCallback((chapterName) => {
+    return practiceProgress[`${chapterName}_type`] || 'all';
   }, [practiceProgress]);
 
   const toggleBookmark = useCallback((questionKey) => {
@@ -438,7 +451,7 @@ export function useStudyStore(username) {
       const d = new Date(now);
       d.setDate(d.getDate() - i);
       const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-      const dayData = stats.dailyStats[key] || { answered: 0, correct: 0 };
+      const dayData = (stats.dailyStats && stats.dailyStats[key]) || { answered: 0, correct: 0 };
       result.push({ date: `${d.getMonth() + 1}/${d.getDate()}`, ...dayData });
     }
     return result;
@@ -574,6 +587,8 @@ export function useStudyStore(username) {
     recordAnswer,
     setPracticeIndex,
     getPracticeIndex,
+    setPracticeType,
+    getPracticeType,
     toggleBookmark,
     removeWrong,
     clearAllWrong,
@@ -583,7 +598,7 @@ export function useStudyStore(username) {
     stopTimer,
     wrongCount: Object.keys(wrong).length,
     completedCount: Object.keys(completed).length,
-    // 章节练习答题记录
+    practiceProgress,
     practiceAnswers,
     getChapterAnswers,
     saveQuestionAnswer,

@@ -2,15 +2,27 @@
 // 章节练习模块 - 选择章节后顺序练习
 // 支持：答题记录持久化、答题卡视图（按题型分组）、题型筛选
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import QuestionCard from './QuestionCard';
 import { getQuestionKey } from '../../hooks/useQuestions';
 
-export default function ChapterPractice({ chapters, store }) {
+export default function ChapterPractice({ chapters, store, initialChapter, onArrival }) {
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [selectedType, setSelectedType] = useState('all'); // all | single | multi | judge
   const [viewMode, setViewMode] = useState('question'); // 'question' | 'answerSheet'
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 从外部接收初始章节（从 StudyStats 点击跳转而来）
+  useEffect(() => {
+    if (initialChapter && chapters.some(c => c.name === initialChapter)) {
+      setSelectedChapter(initialChapter);
+      const savedType = store.getPracticeType(initialChapter) || 'all';
+      setSelectedType(savedType);
+      const savedIndex = store.getPracticeIndex(initialChapter + '_' + savedType) || 0;
+      setCurrentIndex(savedIndex);
+      onArrival?.();
+    }
+  }, [initialChapter, chapters, store, onArrival]);
 
   // 获取当前章节的题目列表
   const currentChapter = useMemo(() =>
@@ -58,16 +70,24 @@ export default function ChapterPractice({ chapters, store }) {
 
   // 切换题目时自动保存位置
   const handleNext = useCallback(() => {
-    if (currentIndex < currentQuestions.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  }, [currentIndex, currentQuestions.length]);
+    setCurrentIndex(prev => {
+      const next = prev + 1;
+      if (next < currentQuestions.length) {
+        store.setPracticeIndex(chapterKey, next);
+      }
+      return Math.min(next, currentQuestions.length - 1);
+    });
+  }, [currentQuestions.length, chapterKey, store]);
 
   const handlePrev = useCallback(() => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  }, [currentIndex]);
+    setCurrentIndex(prev => {
+      const next = prev - 1;
+      if (next >= 0) {
+        store.setPracticeIndex(chapterKey, next);
+      }
+      return Math.max(next, 0);
+    });
+  }, [chapterKey, store]);
 
   // 当前章节完成度
   const chapterCompletedCount = useMemo(() =>
@@ -103,7 +123,10 @@ export default function ChapterPractice({ chapters, store }) {
                 className="chapter-item"
                 onClick={() => {
                   setSelectedChapter(ch.name);
-                  setCurrentIndex(0);
+                  const savedType = store.getPracticeType(ch.name);
+                  setSelectedType(savedType);
+                  const savedIndex = store.getPracticeIndex(ch.name + '_' + savedType) || 0;
+                  setCurrentIndex(savedIndex);
                 }}
               >
                 <div className="chapter-item-header">
@@ -134,7 +157,11 @@ export default function ChapterPractice({ chapters, store }) {
     return (
       <div className="chapter-practice">
         <div className="practice-header">
-          <button className="back-btn" onClick={() => setSelectedChapter(null)}>◀ 返回章节</button>
+          <button className="back-btn" onClick={() => {
+            store.setPracticeIndex(chapterKey, currentIndex);
+            store.setPracticeType(selectedChapter, selectedType);
+            setSelectedChapter(null);
+          }}>◀ 返回章节</button>
           <span className="practice-title">{selectedChapter}</span>
           <span className="practice-stats">答题卡</span>
           <button className="action-btn primary" onClick={() => setViewMode('question')}>
@@ -239,7 +266,11 @@ export default function ChapterPractice({ chapters, store }) {
     <div className="chapter-practice">
       {/* 顶部信息栏 */}
       <div className="practice-header">
-        <button className="back-btn" onClick={() => setSelectedChapter(null)}>◀ 返回章节</button>
+        <button className="back-btn" onClick={() => {
+          store.setPracticeIndex(chapterKey, currentIndex);
+          store.setPracticeType(selectedChapter, selectedType);
+          setSelectedChapter(null);
+        }}>◀ 返回章节</button>
         <span className="practice-title">{selectedChapter}</span>
         <span className="practice-stats">
           已完成 {chapterCompletedCount}/{currentQuestions.length}
@@ -261,8 +292,28 @@ export default function ChapterPractice({ chapters, store }) {
             key={t.key}
             className={`type-filter-btn ${selectedType === t.key ? 'active' : ''}`}
             onClick={() => {
+              if (selectedType === t.key) return;
+              const oldTypeKey = selectedChapter + '_' + selectedType;
+              const newTypeKey = selectedChapter + '_' + t.key;
+              store.setPracticeIndex(oldTypeKey, currentIndex);
+              store.setPracticeType(selectedChapter, t.key);
+              const newQuestions = selectedType === 'all' ? currentChapter.questions
+                : selectedType === 'single' ? currentChapter.byType.single
+                : selectedType === 'multi' ? currentChapter.byType.multi
+                : currentChapter.byType.judge;
+              const savedIdx = store.practiceProgress[newTypeKey] || 0;
+              const newChapterAnswers = store.getChapterAnswers(newTypeKey) || {};
+              let targetIdx = savedIdx < newQuestions.length ? savedIdx : 0;
+              if (targetIdx === 0) {
+                const firstUnanswered = newQuestions.findIndex(q => {
+                  const key = getQuestionKey(q);
+                  const ans = newChapterAnswers[key];
+                  return !ans || !ans.submitted;
+                });
+                if (firstUnanswered >= 0) targetIdx = firstUnanswered;
+              }
               setSelectedType(t.key);
-              setCurrentIndex(0);
+              setCurrentIndex(targetIdx);
             }}
           >
             {t.label}

@@ -83,7 +83,7 @@ function LineChart({ data, width = 500, height = 200 }) {
   );
 }
 
-export default function StudyStats({ store, chapters, totalQuestions }) {
+export default function StudyStats({ store, chapters, totalQuestions, onChapterClick }) {
   const { stats } = store;
   const last7Days = store.getLast7DaysStats();
   const chapterMastery = useMemo(() => store.getChapterMastery(chapters), [store, chapters]);
@@ -142,7 +142,12 @@ export default function StudyStats({ store, chapters, totalQuestions }) {
         <h4 className="stats-section-title">各章节掌握度</h4>
         <div className="mastery-list">
           {chapterMastery.map(ch => (
-            <div key={ch.name} className="mastery-item">
+            <div
+              key={ch.name}
+              className="mastery-item mastery-item-clickable"
+              onClick={() => onChapterClick?.(ch.name)}
+              title="点击继续练习"
+            >
               <div className="mastery-header">
                 <span className="mastery-name">{ch.name}</span>
                 <span className="mastery-detail">

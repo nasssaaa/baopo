@@ -2,7 +2,7 @@
 // 爆破作业员考试在线学习页面 - 主容器
 // 整合章节练习、模拟考试、错题本、学习统计四大模块
 
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuestions } from '../hooks/useQuestions';
 import { useStudyStore } from '../hooks/useStudyStore';
@@ -39,6 +39,13 @@ export default function LearnPage() {
       return () => store.stopTimer();
     }
   }, [auth.user]);
+
+  // 待跳转的章节（从 StudyStats 点击而来）—— 必须放在所有条件 return 之前
+  const [pendingChapter, setPendingChapter] = useState(null);
+  const handleChapterClick = useCallback((chapterName) => {
+    setPendingChapter(chapterName);
+    setActiveTab('practice');
+  }, []);
 
   // 等待 auth 检查完成
   if (auth.loading) {
@@ -214,7 +221,7 @@ export default function LearnPage() {
           {/* Tab 内容 */}
           <div className="learn-content">
             {activeTab === 'practice' && (
-              <ChapterPractice chapters={chapters} store={store} />
+              <ChapterPractice chapters={chapters} store={store} initialChapter={pendingChapter} onArrival={() => setPendingChapter(null)} />
             )}
             {activeTab === 'exam' && (
               <Suspense fallback={<div className="learn-loading"><div className="loading-spinner"></div><p className="loading-text">正在加载模拟考试...</p></div>}>
@@ -232,7 +239,7 @@ export default function LearnPage() {
               </Suspense>
             )}
             {activeTab === 'stats' && (
-              <StudyStats store={store} chapters={chapters} totalQuestions={total} />
+              <StudyStats store={store} chapters={chapters} totalQuestions={total} onChapterClick={handleChapterClick} />
             )}
           </div>
         </main>
